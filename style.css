@@ -1,0 +1,137 @@
+main{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+h1 span::before{
+    display: inline-block;
+    content: "\A";
+    }
+
+h1{
+    font-size: 60px;
+    margin: 0;
+    
+}
+
+container{
+    border-color: black;
+}
+
+body{
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+#one{
+background-color: blue;
+}
+
+#two{
+background-color: orange;
+}
+
+#three{
+background-color: aqua;
+}
+
+#one, #two, #three{
+
+    width: 200px;
+    height: 30px;
+    margin: 10px auto;
+}
+
+h2, p{
+    text-align: center;
+    color: white;
+    max-width: 200px;
+
+}
+
+section{
+    background-color: black;
+    display:flex;
+    flex-direction: column;
+    align-items: center; 
+    /* font-size: 100%; */
+    padding: 30px 30px 30px 30px;
+    
+}
+
+
+/* min width starting point */
+.container{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+    "main"
+    "first"
+    "second"
+    "third";
+}
+
+main{grid-area: main;}
+.first{grid-area: first;}
+.second{grid-area: second;}
+.third{grid-area: third;}
+
+/* media queries*/
+
+@media(min-width: 576px){
+
+.container{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "main main"
+    "first second"
+    "third .";
+}
+
+#one, #two, #three{
+
+    width: 300px;
+    height: 50px;
+    margin: 10px auto;
+}
+
+h2, p{ 
+    max-width: 300px;
+}
+
+
+}
+
+@media(min-width: 992px){
+
+.container{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+    "main main main"
+    "first second third";
+    height: 100vh;
+    
+}
+
+main{
+    align-items: center;
+    flex-direction: row; 
+}
+
+main>div>p{
+    padding: 0; 
+    border: 12px solid #B22222;
+    border-radius: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 100vw;
+
+}
+
+}
